@@ -5,32 +5,18 @@ import { Stage, Center, AccumulativeShadows, RandomizedLight, Environment, Orbit
 function App() {
   return (
     <>
-    {/* <Canvas shadows>
-      <Stage 
-      // shadows="accumulative"
-      >
-        <mesh castShadows position={[-1.5, 0, 0]}>
-          <boxGeometry args={[1, 1, 1]} />
-        </mesh>
-      </Stage>
-    </Canvas> */}
     <Canvas 
-    // gl={{ antialias: false, preserveDrawingBuffer: true }}
+      gl={{ antialias: false, preserveDrawingBuffer: true }}
       shadows
-      camera={{ position: [4, 4, -12], fov: 35 }}
+      camera={{ position: [4, 6, -12], fov: 50 }}
      >
       <group position={[0, -0.75, 0]}>
         <Center top> 
           <Experience />
         </Center>
-        {/* // <AccumulativeShadows>
-        //  <RandomizedLight position={[2, 5, 5]} />
-        // </AccumulativeShadows>  */}
       </group>
-     {/* // <OrbitControls makeDefault minPolarAngle={0} maxPolarAngle={Math.PI / 2} />
-      // <Environment preset="dawn" background blur={1} />  */}
     </Canvas>
-    
+    {/* <Interface /> */}
     </>
   );
 }
