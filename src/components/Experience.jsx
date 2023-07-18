@@ -1,7 +1,12 @@
+import {useState} from 'react';
+// import { PointLight} from "@react-three/fiber";
 import { Stage, OrbitControls, AccumulativeShadows, RandomizedLight } from "@react-three/drei";
 import { Table } from "./Table";
+import { useConfigurator } from "../contexts/Configurator";
 
 export const Experience = () => {
+  const {legs} = useConfigurator();
+  const [legsColor, setLegsColor] = useState();
   return (
     <>
       <Stage 
@@ -15,6 +20,7 @@ export const Experience = () => {
         // }}
         adjustCamera={2}
       >
+        {/* <PointLight /> */}
         <Table />
       </Stage>
       <OrbitControls 

@@ -1,5 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { Experience } from "./components/Experience";
+import { Interface } from "./components/Interface";
 import { Stage, Center, AccumulativeShadows, RandomizedLight, Environment, OrbitControls } from '@react-three/drei'
 // import { useControls, button } from 'leva'
 function App() {
@@ -14,9 +15,9 @@ function App() {
         <Center top> 
           <Experience />
         </Center>
-      </group>
+      </group>  
     </Canvas>
-    {/* <Interface /> */}
+    <Interface />
     </>
   );
 }

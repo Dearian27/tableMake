@@ -9,9 +9,11 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import { useConfigurator } from "../contexts/Configurator";
 export const Interface = () => {
   // const { tableWidth, setTableWidth, legs, setLegs, legsColor, setLegsColor } =
   //   useConfigurator();
+  const {legs, setLegs} = useConfigurator();
   return (
     <Box
       sx={{
@@ -21,8 +23,8 @@ export const Interface = () => {
       }}
       p={3}
     >
-      <Stack spacing={3}>
-        <Typography variant="caption">Table Configurator</Typography>
+      <Stack spacing={2}>
+        {/* <Typography variant="caption">Table Configurator</Typography> */}
         <Box className="glass" p={3}>
           <FormControl>
             <FormLabel>Table width</FormLabel>
@@ -42,8 +44,8 @@ export const Interface = () => {
           <FormControl>
             <FormLabel>Legs Layout</FormLabel>
             <RadioGroup
-            // value={legs}
-            // onChange={(e) => setLegs(parseInt(e.target.value))}
+            value={legs}
+            onChange={(e) => setLegs(parseInt(e.target.value))}
             >
               <FormControlLabel
                 value={0}
